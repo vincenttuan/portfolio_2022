@@ -64,11 +64,10 @@ public class TStockController {
 		if(!optClassify.isPresent()) {
 			return null;
 		}
-		Optional<TStock> optTStock = tStockRepository.findById(id);
-		if(!optTStock.isPresent()) {
+		TStock tStock = get(id);
+		if(tStock == null) {
 			return null;
 		}
-		TStock tStock = optTStock.get();
 		tStock.setName(map.get("name"));
 		tStock.setSymbol(map.get("symbol"));
 		tStock.setClassify(optClassify.get());

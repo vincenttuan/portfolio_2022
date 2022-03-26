@@ -68,13 +68,14 @@ public class ClassifyController {
 		if (classify == null) {
 			return null;
 		}
+		// 修改 classify
 		classify.setName(map.get("name"));
 		if(map.get("tx") == null) {
 			classify.setTx(false);
 		} else {
 			classify.setTx(true);
 		}
-		classify = classifyRepository.saveAndFlush(classify);
+		//classify = classifyRepository.saveAndFlush(classify);
 		return classify;
 	}
 	

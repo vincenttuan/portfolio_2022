@@ -72,11 +72,11 @@ public class InvestorController {
 		if(investor == null) {
 			return null;
 		}
+		// 修改 Investor
 		investor.setUsername(map.get("username"));
 		investor.setEmail(map.get("email"));
 		investor.setBalance(Integer.parseInt(map.get("balance")));
-		// 修改 Investor
-		investor = investorRepository.saveAndFlush(investor);
+		//investor = investorRepository.saveAndFlush(investor);
 		return investor;
 	}
 	
