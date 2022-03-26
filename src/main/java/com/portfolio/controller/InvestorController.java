@@ -65,7 +65,7 @@ public class InvestorController {
 	}
 	
 	// 修改
-	@PutMapping(value = {"/id"})
+	@PutMapping(value = {"/{id}"})
 	@Transactional
 	public Investor update(@PathVariable("id") Integer id, @RequestBody Map<String, String> map) {
 		Investor investor = get(id);
@@ -81,7 +81,7 @@ public class InvestorController {
 	}
 	
 	// 刪除
-	@DeleteMapping(value = {"/id"})
+	@DeleteMapping(value = {"/{id}"})
 	@Transactional
 	public Boolean delete(@PathVariable("id") Integer id) {
 		Investor investor = get(id);
