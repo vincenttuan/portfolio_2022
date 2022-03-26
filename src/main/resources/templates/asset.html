@@ -73,7 +73,7 @@
             // 更新asset列表
             function update() {
                 $.get("/portfolio/investor/" + session_investor_id, function (data, status) {
-                    //console.log(JSON.stringify(data));
+                    console.log(JSON.stringify(data));
                     $("#balance").text(numberFormat(data.balance));
                     table_list(data.portfolios);
                     console.log(data.portfolios);
@@ -118,6 +118,7 @@
                 });
                 $('#myTable').append(String.format(foot_html, numberFormat(profit_sum)));
                 $("#asset").text(numberFormat(asset_sum));
+                
             }
 
         </script>

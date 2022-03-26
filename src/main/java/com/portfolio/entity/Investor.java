@@ -35,6 +35,10 @@ public class Investor {
 	@JsonIgnoreProperties("investor")
 	private Set<Watch> watchs;
 	
+	@OneToMany
+	@JsonIgnoreProperties("investor")
+	private Set<Portfolio> portfolios;
+	
 	public Investor() {
 		
 	}
@@ -84,7 +88,14 @@ public class Investor {
 	public void setWatchs(Set<Watch> watchs) {
 		this.watchs = watchs;
 	}
-	
+
+	public Set<Portfolio> getPortfolios() {
+		return portfolios;
+	}
+
+	public void setPortfolios(Set<Portfolio> portfolios) {
+		this.portfolios = portfolios;
+	}
 	
 	
 }
