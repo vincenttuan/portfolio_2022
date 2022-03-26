@@ -1,11 +1,16 @@
 package com.portfolio.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // 商品分類表
 @Entity
@@ -20,6 +25,10 @@ public class Classify {
 	
 	@Column
 	private Boolean tx; // 該商品是否可交易(transaction)
+	
+	@OneToMany(mappedBy = "classify")
+	@JsonIgnoreProperties("classify")
+	private Set<TStock> tStocks;
 	
 	public Classify() {
 		 
@@ -53,6 +62,14 @@ public class Classify {
 
 	public void setTx(Boolean tx) {
 		this.tx = tx;
+	}
+
+	public Set<TStock> gettStocks() {
+		return tStocks;
+	}
+
+	public void settStocks(Set<TStock> tStocks) {
+		this.tStocks = tStocks;
 	}
 	
 }
