@@ -50,6 +50,10 @@
 				success: function(resp) {
 					console.log(JSON.stringify(resp));
 					initPageSetup();
+				},
+				error: function(req, stat) {
+					alert('此商品分類下仍有股票，無法刪除！');
+					//alert(JSON.stringify(req) + ", " + stat);
 				}
 			});
 		});
