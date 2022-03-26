@@ -29,6 +29,8 @@ public class Investor {
 	@Column
 	private Integer balance; // 目前帳戶餘額
 	
+	// CascadeType.REMOVE 表示聯集刪除
+	// 刪除 Investor 也一併刪除 Watch
 	@OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "investor")
 	@JsonIgnoreProperties("investor")
 	private Set<Watch> watchs;
