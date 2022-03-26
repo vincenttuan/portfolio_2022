@@ -54,7 +54,7 @@ public class PriceController {
 	}
 	
 	// 取得歷史資料繪製K線圖用
-	@GetMapping("/hisquotes/{symbol:.+}")
+	@GetMapping("/histquotes/{symbol:.+}")
 	public List<HistoricalQuote> queryHistoricalQuotes(@PathVariable("symbol") String symbol) {
 		List<HistoricalQuote> historicalQuotes = null;
 		try {
