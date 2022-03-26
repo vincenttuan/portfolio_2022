@@ -64,7 +64,7 @@
 				$('#upt').attr('disabled', false);
 				$('#del').attr('disabled', false);
 				$('#myform').trigger('reset'); // 表單內容清空（重置）
-				
+				// 將資料配置到表單
 				$("#myform").find("#id").val(data.id);
 				$("#myform").find("#name").val(data.name);
 				$("#myform").find("#tx").prop('checked', data.tx);
